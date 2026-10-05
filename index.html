@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Comercial Super Win C.A · Juguetes, Fiestas, Regalos y más</title>
+  <meta name="description" content="Comercial Super Win C.A — juguetes, peluches, piñatería, útiles escolares, decoración y regalos en Caracas, Venezuela." />
+  <meta name="theme-color" content="#0d0a13" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M22 22v-6a10 10 0 0 1 20 0v6' fill='none' stroke='%23334155' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M12 22h20v36H8z' fill='%23ff7a7a'/%3E%3Cpath d='M32 22h20l4 36H32z' fill='%23ff3fa4'/%3E%3C/svg%3E" />
+  <script>
+    // Apply theme before paint to avoid flash - default to dark
+    (function () {
+      try {
+        var t = localStorage.getItem("sw_theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#app">Saltar al contenido</a>
+
+  <!-- Announcement bar -->
+  <div class="announce" role="region" aria-label="Avisos">
+    <div class="announce__track" id="announceTrack">
+      <span>✨ Nuevos productos cada semana</span>
+      <span>📍 Caracas, Venezuela · Atención 0412-2200366</span>
+      <span>🧾 Los precios no incluyen el IVA (16%)</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__row">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="Abrir menú" data-icon="menu"></button>
+
+      <a href="#/" class="logo" aria-label="Comercial Super Win — Inicio">
+        <svg class="logo__bag" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M22 22v-6a10 10 0 0 1 20 0v6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" class="logo__handle"/>
+          <path d="M12 22h20v36H8z" fill="#ff7a7a"/>
+          <path d="M32 22h20l4 36H32z" fill="#ff3fa4"/>
+        </svg>
+        <span class="logo__text"><b>SUPER WIN</b><small>COMERCIAL · C.A</small></span>
+      </a>
+
+      <div class="search" id="search">
+        <span class="search__icon" data-icon="search"></span>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Busca peluches, piñatas, bolsos, útiles…" aria-label="Buscar productos" />
+        <kbd class="search__kbd">/</kbd>
+        <div class="search__panel" id="searchPanel" role="listbox"></div>
+      </div>
+
+      <nav class="header__actions" aria-label="Acciones">
+        <button class="icon-btn only-mobile" id="searchBtnMobile" aria-label="Buscar" data-icon="search"></button>
+        <button class="icon-btn theme-toggle" id="themeBtn" aria-label="Cambiar tema">
+          <span class="theme-toggle__sun" data-icon="sun"></span>
+          <span class="theme-toggle__moon" data-icon="moon"></span>
+        </button>
+        <a class="icon-btn hide-mobile" href="#/wishlist" aria-label="Lista de deseos">
+          <span data-icon="heart"></span><i class="badge" id="wishCount" hidden>0</i>
+        </a>
+        <button class="icon-btn hide-mobile" aria-label="Mi cuenta" data-icon="user" id="accountBtn"></button>
+        <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+          <span data-icon="bag"></span>
+          <span class="cart-btn__total" id="cartTotalHeader">$0.00</span>
+          <i class="badge" id="cartCount" hidden>0</i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Category nav with mega menu -->
+    <div class="catnav hide-mobile">
+      <div class="container catnav__row" id="catnav"></div>
+      <div class="mega" id="mega" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__news">
+      <div>
+        <h3>Recibe las novedades primero</h3>
+        <p>Lanzamientos, temporada escolar, Halloween y Navidad — directo a tu correo.</p>
+      </div>
+      <form class="news-form" id="newsForm">
+        <input type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico" />
+        <button class="btn btn--primary" type="submit">Suscribirme</button>
+      </form>
+    </div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#/" class="logo logo--footer">
+          <svg class="logo__bag" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M22 22v-6a10 10 0 0 1 20 0v6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M12 22h20v36H8z" fill="#ff7a7a"/><path d="M32 22h20l4 36H32z" fill="#ff3fa4"/>
+          </svg>
+          <span class="logo__text"><b>SUPER WIN</b><small>COMERCIAL · C.A</small></span>
+        </a>
+        <p>Juguetes, peluches, piñatería, útiles escolares, decoración y regalos. Caracas, Venezuela.</p>
+        <div class="footer__contact">
+          <a href="tel:+584122200366"><span data-icon="phone"></span> 0412-2200366</a>
+          <a href="https://wa.me/584122200366" target="_blank" rel="noopener"><span data-icon="whatsapp"></span> WhatsApp</a>
+        </div>
+      </div>
+      <div><h4>Categorías</h4><ul id="footerCats"></ul></div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#/info/envios">Envíos y entregas</a></li>
+          <li><a href="#/info/pagos">Métodos de pago</a></li>
+          <li><a href="#/info/devoluciones">Cambios y devoluciones</a></li>
+          <li><a href="#/info/contacto">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pagos aceptados</h4>
+        <div class="paychips">
+          <span>Pago Móvil</span><span>Zelle</span><span>Binance</span><span>Efectivo $</span><span>Transferencia</span>
+        </div>
+        <p class="muted small">Métodos de pago a confirmar por la tienda.</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Comercial Super Win C.A · Todos los derechos reservados</span>
+      <span class="demo-pill">Versión de prueba (demo)</span>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-fab" href="https://wa.me/584122200366" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-icon="whatsapp"></a>
+
+  <!-- Cart drawer -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer drawer--right" id="cartDrawer" aria-label="Carrito" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Tu carrito <span class="muted" id="cartHeadCount"></span></h3>
+      <button class="icon-btn" data-close aria-label="Cerrar" data-icon="x"></button>
+    </div>
+    <div class="drawer__body" id="cartBody"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- Mobile menu drawer -->
+  <aside class="drawer drawer--left" id="menuDrawer" aria-label="Menú" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Categorías</h3>
+      <button class="icon-btn" data-close aria-label="Cerrar" data-icon="x"></button>
+    </div>
+    <div class="drawer__body" id="menuBody"></div>
+  </aside>
+
+  <!-- Quick view modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__card" id="modalCard"></div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="data/catalog.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
